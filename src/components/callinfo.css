@@ -1,18 +1,4 @@
 .callInfoContent {
-  background-color: #33eb91;
-  animation-name: color;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes color {
-  0% {
-    background-color: #00a7e6;
-  }
-  50% {
-    background-color: #33eb91;
-  }
-  100% {
-    background-color: #004c69;
-  }
+  background-color: #004c69;
+  
 }

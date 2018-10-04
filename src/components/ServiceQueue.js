@@ -1,16 +1,7 @@
 import CallList from './CallList';
-import { entered } from '../socket';
+import { entered, finished } from '../socket';
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-
-const callinfos = [
-  {call_id: 1, actor: 'Leonardo@gmail.com', number: '342121313'},
-  {call_id: 1, actor: 'leo@leo', number: '342121313'},
-  {call_id: 1, actor: 'leo@leo', number: '342121313'},
-  {call_id: 1, actor: 'leo@leo', number: '342121313'},
-  {call_id: 1, actor: 'leo@leo', number: '342121313'},
-  {call_id: 1, actor: 'leo@leo', number: '342121313'},
-]
 
 const styles = theme => ({
   list: {
@@ -22,27 +13,40 @@ class ServiceQueue extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
+    
+    this.state = {
+      callinfos: {}
+    }
   }
 
-  // componentDidMount() {
-  //   entered((error, { actor, number, call_id }) => {
+  componentDidMount() {
+    entered((error, { actor, number, call_id }) => {
+      if(error) console.error(error);
+      
+      this.setState({
+        callinfos: {...this.state.callinfos,  [call_id]: {actor, number}}
+      });
+    });
 
-  //   })
-  // }
+    finished((error, call_id) => {
+      let data = this.state.callinfos;
+      
+      delete data[call_id];
+      
+      this.setState({
+        callinfos: data
+      });
+    })
 
-  // delete = (id) => {
-  //   this.setState(prevState => ({
-  //       data: prevState.data.filter(el => el != id )
-  //   }));
-  // }
+  }
+
 
   render() {
     const { classes } = this.props;
 
     return (
       <div className={classes.list}>
-        <CallList  callinfos={callinfos} />
+        <CallList  callinfos={this.state.callinfos} />
       </div>
     );
   }
