@@ -6,8 +6,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
-import green from '@material-ui/core/colors/green';
-import orange from '@material-ui/core/colors/orange';
 import Typography from '@material-ui/core/Typography';
 import PersonIcon from '@material-ui/icons/Person';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -32,7 +30,6 @@ const styles = theme => ({
   content: {
     color: '#fff',
     backgroundColor: '#004c69',
-    fontFamily: 'Comfortaa, cursive'
   }
 });
 
