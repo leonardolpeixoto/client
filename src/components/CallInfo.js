@@ -9,6 +9,7 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import PersonIcon from '@material-ui/icons/Person';
 import PhoneIcon from '@material-ui/icons/Phone';
+import './callinfo.css';
 
 const styles = theme => ({
   card: {
@@ -29,7 +30,6 @@ const styles = theme => ({
   },
   content: {
     color: '#fff',
-    backgroundColor: '#004c69',
   }
 });
 
@@ -47,9 +47,10 @@ function CallInfo(props) {
               </Avatar>
             }
             title={props.actor}
+            titleTypographyProps={{color: 'inherit', variant: 'headline', component:'h3'}}
           />
           <Divider light={true}/>
-          <CardContent className={classes.content}>
+          <CardContent className={`${classes.content} callInfoContent`}>
             <Typography  color='inherit' variant='headline' component='h3' align='center'>
               <PhoneIcon/>{props.number}
             </Typography>
