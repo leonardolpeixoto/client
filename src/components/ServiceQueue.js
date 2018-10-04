@@ -3,7 +3,7 @@ import CallList from './CallList';
 import { entered } from '../socket';
 
 const callinfos = [
-  {call_id: 1, actor: 'leo@leo', number: '342121313'},
+  {call_id: 1, actor: 'Leonardo@gmail.com', number: '342121313'},
   {call_id: 1, actor: 'leo@leo', number: '342121313'},
   {call_id: 1, actor: 'leo@leo', number: '342121313'},
   {call_id: 1, actor: 'leo@leo', number: '342121313'},
