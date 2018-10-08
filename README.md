@@ -13,6 +13,8 @@ Para rodar nossa aplicação em modo de desenvolvimento devemos utilizar o coman
 ```shell
 npm start #yarn start
 ```
+### Config
+Para especificar o endereço do server edite o [arquivo](https://github.com/leonardolpeixoto/client/blob/master/src/socket/index.js) passando o mesmo como paramêtro para **openSocket**
 
 ### Prerequisites
 Para o funcionamento da aplicação devemos [instalar](https://nodejs.org/en/download/) o node na versão 8.12.
