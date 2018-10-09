@@ -1,7 +1,6 @@
 import React from 'react';
 import CallInfo from './CallInfo';
 import Grid from '@material-ui/core/Grid';
-import _ from 'lodash';
 
 function CallList(props) {
   return (
